@@ -1,3 +1,4 @@
+package practise;
 
 public class listpartition {
     public  class Node{
