@@ -8,6 +8,12 @@ public class listpartition {
             this.value = data;
         }
     }
+
+    /*
+    * 把一个单链表调整为小于pivot,等于pivot,大于pivot的顺序,并保持稳定性
+    * 方法:创建三个链表,在遍历过程中分别按顺序保存小于pivot,等于pivot,大于pivot的部分,最后再拼接起来
+    *       注意每个链表保存第一个元素和为空的情况;
+    * */
     public static Node listPartition(Node head,int pivot){
         Node sh = null;//小的头
         Node st = null;//小的尾
@@ -59,5 +65,4 @@ public class listpartition {
         }
         return sh != null?sh:eh!=null?eh:bh;
     }
-
 }
