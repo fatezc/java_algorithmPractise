@@ -4,6 +4,7 @@ package practise;
 /*
 *给定一个整数数组 A，以及一个整数 target 作为目标值，返回满足 i < j < k 且 A[i] + A[j] + A[k] == target 的元组 i, j, k 的数量。
 由于结果会非常大，请返回 结果除以 10^9 + 7 的余数。
+* 其中
 3 <= A.length <= 3000
 0 <= A[i] <= 100
 0 <= target <= 300
