@@ -29,5 +29,4 @@ public class CountRangeSum {
         }
         return ans;
     }
-
 }
