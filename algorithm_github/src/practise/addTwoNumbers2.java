@@ -72,5 +72,4 @@ public class addTwoNumbers2 {
             help.next = new ListNode(arr[arr.length-1]);
         return ans;
     }
-
 }
