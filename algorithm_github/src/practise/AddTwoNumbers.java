@@ -3,17 +3,16 @@ package practise;
 * 给定两个非空链表来代表两个非负整数。数字最高位位于链表开始位置。它们的每个节点只存储单个数字。将这两数相加会返回一个新的链表。
 你可以假设除了数字 0 之外，这两个数字都不会以零开头。
 你不能对列表中的节点进行翻转。
-
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/add-two-numbers-ii
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 * */
 public class AddTwoNumbers {
     public class ListNode {
-      int val;
-      ListNode next;
-      ListNode(int x) { val = x; }
-  }
+        int val;
+        ListNode next;
+        ListNode(int x) { val = x; }
+    }
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         if (l1 == null)
             return l2;
@@ -32,11 +31,11 @@ public class AddTwoNumbers {
         }
         int[] arr = new int[Math.max(len1,len2)+1];
         int cur = 1;
-       while (len1>len2){
-           arr[cur++] = l1.val;
-           l1 = l1.next;
-           len1--;
-       }
+        while (len1>len2){
+            arr[cur++] = l1.val;
+            l1 = l1.next;
+            len1--;
+        }
         while (len1<len2){
             arr[cur++] = l2.val;
             l2 = l2.next;
