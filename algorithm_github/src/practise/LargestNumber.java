@@ -32,7 +32,7 @@ public class LargestNumber {
 
         /*
         算法思想:给数组中元素排序,为了方便取num[i]中的某位,先将其转为string
-        比较原则:比如是"12","121",则比较"121212"和"121121",即s1*s2.length和s2*s1.length
+       然后比较s1+s2和s2+s1
          */
         PriorityQueue<Integer> dui = new PriorityQueue<>(new Comparator<Integer>() {
             @Override
@@ -40,14 +40,7 @@ public class LargestNumber {
                 String s1 = String.valueOf(o1);
                 String s2 = String.valueOf(o2);
                 int i = 0;
-                while (i<s1.length()*s2.length()){
-                    if (s1.charAt(i%s1.length())>s2.charAt(i%s2.length()))
-                        return -1;
-                    else if (s1.charAt(i%s1.length())<s2.charAt(i%s2.length()))
-                        return 1;
-                    ++i;
-                }
-                return 0;
+                return (s1+s2).compareTo(s2+s1);
             }
         });
         for (int i = 0; i < nums.length; i++) {
