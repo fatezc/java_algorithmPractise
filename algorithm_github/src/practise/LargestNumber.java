@@ -33,6 +33,7 @@ public class LargestNumber {
         /*
         算法思想:给数组中元素排序,为了方便取num[i]中的某位,先将其转为string
         比较原则:比如是"12","121",则比较"121212"和"121121",即s1*s2.length和s2*s1.length
+                或者比较s1+s2和s2+s1,但由于这样会多生成两个字符串,所以会多耗费时空
          */
         PriorityQueue<Integer> dui = new PriorityQueue<>(new Comparator<Integer>() {
             @Override
