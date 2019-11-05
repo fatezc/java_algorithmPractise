@@ -24,13 +24,13 @@ public class WiggleMaxLength {
 相同的位置，意味着 nums[i] == nums[i - 1]nums[i]==nums[i−1]
 更新的过程如下：
 
-如果 nums[i] > nums[i-1]nums[i]>nums[i−1] ，意味着这里在摆动上升，前一个数字肯定处于下降的位置。所以 up[i] = down[i-1] + 1up[i]=down[i−1]+1 ， down[i]down[i] 与 down[i-1]down[i−1] 保持相同。
+如果 nums[i] > nums[i-1]nums[i]>nums[i−1] ，意味着这里在摆动上升，前一个数字肯定处于下降的位置。所以 up[i] = down[i-1] + 1 ， down[i] 与 down[i-1] 保持相同。
 
-如果 nums[i] < nums[i-1]nums[i]<nums[i−1] ，意味着这里在摆动下降，前一个数字肯定处于下降的位置。所以 down[i] = up[i-1] + 1down[i]=up[i−1]+1 ， up[i]up[i] 与 up[i-1]up[i−1] 保持不变。
+如果 nums[i] < nums[i-1]nums[i]<nums[i−1] ，意味着这里在摆动下降，前一个数字肯定处于下降的位置。所以 down[i] = up[i-1] + 1 ， up[i]与 up[i-1] 保持不变。
 
-如果 nums[i] == nums[i-1]nums[i]==nums[i−1] ，意味着这个元素不会改变任何东西因为它没有摆动。所以 down[i]down[i] 与 up[i]up[i] 与 down[i-1]down[i−1] 和 up[i-1]up[i−1] 都分别保持不变。
+如果 nums[i] == nums[i-1]nums[i]==nums[i−1] ，意味着这个元素不会改变任何东西因为它没有摆动。所以 down[i] 与 up[i] 与 down[i-1] 和 up[i-1]都分别保持不变。
 
-最后，我们可以将 up[length-1]up[length−1] 和 down[length-1]down[length−1] 中的较大值作为问题的答案，其中 lengthlength 是给定数组中的元素数目。
+最后，我们可以将 up[length-1] 和 down[length-1] 中的较大值作为问题的答案，其中 length 是给定数组中的元素数目。
 
 下面的例子可以说明这一过程：
 
