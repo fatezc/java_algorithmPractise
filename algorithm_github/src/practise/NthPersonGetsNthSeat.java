@@ -19,16 +19,14 @@ public class NthPersonGetsNthSeat {
         1.动态规划
 很容易想到，如果第一个人正好坐在自己的位置，那么之后所有的人都会坐在自己的位置。
 如果第一个人正好坐在第n个人的位置，那么第n个人没可能坐在自己的位置。
-如果第一个人坐在除了自己位置以及第n个人的位置之外的任何位置，情况就如同n-1个座位情况。
-所以转移方程为: dp[i] = 1 / i + (i - 2) / i * dp[i - 1]
+如果第一个人坐在第k个位置，其中1<k<n，那么第2~k-1个人会按自己的票来坐，相当于dp[k]
+所以转移方程为: dp[i] = 1 / i + 1 / i(dp[i-1] + dp[i-2] + ... dp[2])
 上式可根据数学归纳法得出当dp >= 2 时dp[i] = 0.5
 作者：virginiadb-Y0WqAUJ773
 链接：https://leetcode-cn.com/problems/airplane-seat-assignment-probability/solution/dong-tai-gui-hua-fa-he-shu-xue-fa-by-virginiadb-y0/
 来源：力扣（LeetCode）
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
          */
-         if ( n== 1)
-             return 1.0;
-         else return 0.5;
+        return n > 1?0.5:1.0;
     }
 }
