@@ -39,6 +39,6 @@ public class Largest1BorderedSquare {
                 }
             }
         }
-        return ans;
+        return ans*ans;
     }
 }
