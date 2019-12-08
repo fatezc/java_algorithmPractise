@@ -16,7 +16,7 @@ public class AtMostNGivenDigitSet {
         String Nstr = ""+N;
         //假设N是n位数，则下面这个循环先考虑了1~n-1位数的情况，因为1~n-1位数必然小于n位数
         for (int i = 1; i <= Nstr.length()-1 ; i++) {
-            ans += (Math.pow(D.length,i));
+            ans += (int)(Math.pow(D.length,i));
         }
         /*
         接下来计算满足条件的n位数
